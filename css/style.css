@@ -1,0 +1,255 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700|Open+Sans:300,400,600,700);
+@import url("../webfont/stylesheet.css");
+
+html, body{
+	background: #ddd;
+	font-family: "aller", sans-serif;
+}
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+.clear{
+	clear: both;
+}
+
+
+
+.center{
+	width: 800px;
+	margin: auto;
+}
+
+
+/* Header */
+
+.header{
+	width: 100%;
+	min-width: 800px;
+	height: 40px;
+	background: #013;
+}
+	.logo{
+		width: 220px;
+		height: 40px;
+		float: left;
+		background: #215A7F;
+		line-height: 40px;
+		color: white;
+		font-weight: 300;
+		font-size: 20px;
+		text-indent: 20px;
+		text-shadow: 0 1px 1px #000;
+	}
+
+	.menu{
+		float: left;
+		color: #fff;
+		margin-left: 25px;
+	}
+		.menu ul{}
+			.menu li{
+				float: left;
+				margin-right: 25px;
+			}
+				.menu li a{
+					color: #e9e9e9;
+					text-shadow: 0 1px 1px #000;
+					line-height: 40px;
+				}
+
+
+/* Search */
+
+.search{
+	width: 520px;
+	height: 55px;
+	margin: 30px auto;
+	background: #fff;
+	border-right: 1px solid #E8E8E8;
+	position: relative;
+}
+
+	.search-text{
+		min-width: 445px;
+		height: 55px;
+		border: 0;
+		padding-left: 10px;
+		padding-right: 10px;
+		/*padding-right: 45px;*/
+		font-family: "Open Sans", sans-serif;
+		font-weight: 300;
+		font-size: 16px;
+		letter-spacing: 1px;
+		float: left;
+	}
+
+	.submit-search{
+		width: 55px; 
+		height: 55px; 
+		border: 0;
+		background: url('../images/search.png') no-repeat center center;
+		float: left;
+		border-right: 1px solid #E8E8E8;
+	}
+
+	.search-reset {
+	    display: none;
+	    position: absolute;
+	    top: 18px;
+	    right: 14px;
+	    width: 11px;
+	    height: 24px;
+	    padding: 0 7px;
+	    cursor: pointer;
+	    background: url("../images/iconReset.gif") 7px 6px no-repeat #e8e8e8;
+	    -webkit-border-radius: 15px;
+	    -moz-border-radius: 15px;
+	    -ms-border-radius: 15px;
+	    -o-border-radius: 15px;
+	    border-radius: 15px;
+	    -webkit-transition:
+	    background-color 0.2s ease 0.2s;
+	    -moz-transition: background-color 0.2s ease 0.2s;
+	    -ms-transition: background-color 0.2s ease 0.2s;
+	    -o-transition: background-color 0.2s ease 0.2s;
+	    transition: background-color 0.2s ease 0.2s;
+		}
+		 
+		.search-reset:hover {
+		    background-color: #ddd;
+		}
+		 
+		.search-reset:active {
+		    -webkit-box-shadow: inset 1px 1px 2px #bbb;
+		    -moz-box-shadow: inset 1px 1px 2px #bbb;
+		    -ms-box-shadow: inset 1px 1px 2px #bbb;
+		    -o-box-shadow: inset 1px 1px 2px #bbb;
+		    box-shadow: inset 1px 1px 2px #bbb;
+		}
+
+
+
+
+/* İcerik */
+
+
+.icerik{
+	width: 800px;
+	height: 500px;
+	margin: auto;
+	background: #E9EBED;
+}
+
+	.icerik ul{
+		width: 100%;
+		font-size: 15px;
+	}
+
+		.icerik li{
+			width: 100%;
+			float: left;
+			border-bottom: 1px solid #E6E6E6;
+			background: white;
+		}
+			.icerik li.baslik{
+				background: #F1EEED;
+			}
+
+
+			.icerik li .firma{
+				min-width: 100px;
+				line-height: 40px;
+				padding-left: 10px;
+				border-right: 1px solid #E6E6E6;
+				float: left;
+			}
+
+			.icerik li .isim{
+				width: 370px;
+				line-height: 40px;
+				padding-left: 10px;
+				border-right: 1px solid #E6E6E6;
+				float: left;
+			}
+				.icerik li .isim a{
+					color: #0d0d0d;
+					padding-top: 5px;
+					padding-bottom: 5px;
+				}
+					.icerik li .isim a:hover{
+						color: darkblue;
+					}
+					
+			.icerik li .fiyat{
+				width: 80px;
+				line-height: 40px;
+				padding-left: 10px;
+				border-right: 1px solid #E6E6E6;
+				float: left;
+			}
+
+			.icerik li .stok{
+				width: 80px;
+				line-height: 40px;
+				padding-left: 10px;
+				border-right: 1px solid #E6E6E6;
+				float: left;
+			}
+			.icerik li .islem{
+				width: 116px;
+				line-height: 40px;
+				padding-left: 10px;
+				float: left;
+			}
+				.icerik li .islem a{
+					padding-right: 5px;
+					color: #0d0d0d;
+				}
+					.icerik li .islem a:hover{
+						color: black;
+					}
+
+	
+
+
+
+
+/* Footer */
+
+.footer{
+	width: 100%;
+}
+
+
+@media screen and (min-width: 1024px){
+
+	.center{
+		width: 1010px;
+	}
+
+	.icerik{
+		width: 1010px;
+	}
+		.icerik li .isim{
+			width: 580px;
+		}
+
+}
+
+@media screen and (min-width: 1366px){
+
+	.center{
+		width: 1200px;
+	}
+
+	.icerik{
+		width: 1200px;
+	}
+		.icerik li .isim{
+			width: 770px;
+		}
+}
