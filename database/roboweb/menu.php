@@ -24,6 +24,7 @@
 		while ($son == false) {
 
 			$link = @explode("<div class=\"accordion-row\">", $page);
+
 			// Arttır
 			$link = @explode("</a>", $link[$b]);
 			$link = @explode("<a href=\"", $link[0]);

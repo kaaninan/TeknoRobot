@@ -30,7 +30,6 @@
 	    	$sorgula = mysql_query("SELECT * FROM ".$firma) or die (mysql_error());
 
 			while($row = mysql_fetch_array($sorgula)){
-
 	    		$eski_urunler[] = ["isim" => $row["isim"], "link" => $row["link"], "fiyat_eski" => $row["fiyat_eski"], "fiyat_yeni" => $row["fiyat_yeni"], "tarih" => $row["tarih"]];
 
 			}
@@ -44,7 +43,20 @@
 	    // Tabla yoksa
 	    else {
 
-	    	// foreach ile kaydet
+
+	    	foreach ($yeni_urunler as $key => $value) {
+
+	    		print_r($yeni_urunler);
+
+	    		echo "<br><br><br>";
+
+	    		echo $yeni_urunler["isim"];
+
+	    		echo "<br>";
+
+
+	    	}
+	    	
 	    }
 
 
