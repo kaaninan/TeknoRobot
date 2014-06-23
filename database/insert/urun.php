@@ -7,33 +7,48 @@
 	mysql_query("SET NAMES UTF8");
 
 
-	function urunEkle ($firma, $isim, $link, $fiyat) {
+	function urunEkle ($firma, $yeni_urunler) {
 
 
 		// Tabloları listele
 
-		$tablo = mysql_query( "SHOW TABLES" );  
-  
-		if (!$result) {  
-		    echo "Sorguda hata meydana geldi <br>";  
-		    echo 'mysql error: ' . mysql_error();  
+		$tablo = mysql_query( "SHOW TABLES" );
+		$sonuc = false;
 
-		// Tablo varsa
-		} else { 
+	    while ($row = mysql_fetch_row($tablo)) {  
 
-		    while ($row = mysql_fetch_row($tablo)) {  
-		        echo $row[0];
-		    }
+	    	// Eğer gelen firma database'de varsa
+	        if ($firma == $row[0]) {
+	        	$sonuc = true;
+	        }
 
+	    }
 
-		    $sorgula = mysql_query("SELECT * FROM roboweb") or die (mysql_error());
+	    // Eğer tablo varsa
+	    if ($sonuc == true) {
+
+	    	$sorgula = mysql_query("SELECT * FROM ".$firma) or die (mysql_error());
 
 			while($row = mysql_fetch_array($sorgula)){
 
+	    		$eski_urunler[] = ["isim" => $row["isim"], "link" => $row["link"], "fiyat_eski" => $row["fiyat_eski"], "fiyat_yeni" => $row["fiyat_yeni"], "tarih" => $row["tarih"]];
+
+			}
+
+			print_r($yeni_urunler);
+	    	
+	    	// kontrolleri yap
+
+	    }
+
+	    // Tabla yoksa
+	    else {
+
+	    	// foreach ile kaydet
+	    }
 
 
-			}	
-		} 
+	    
 
 
 
@@ -56,12 +71,17 @@
 
 
 
-	$eski[] = ['isim' => 'apple', 'link' => 'banana'];
+
+
+	$eski[] = array('isim' => 'apple', 'link' => 'banana');
 	$eski[] = ['isim' => 'apple2', 'link' => 'banana2'];
 	$eski[] = ['isim' => 'apple3', 'link' => 'banana3'];
 
 	$yeni[] = ['isim' => 'apple', 'link' => 'banana'];
 	$yeni[] = ['isim' => 'apple3', 'link' => 'banana3'];
+
+
+	urunEkle("roboweb", $eski);
 
 
 	// Eski kayıtları silme
